@@ -2,8 +2,6 @@
 <resources>
     <string name="app_name">RelativeLayoutSample</string>
     <string name="label_text">Введите текст</string>
-    <string name="label_text">Введите текст</string>
-    <string name="entry_hint">Поле ввода</string>
     <string name="entry_hint">Поле ввода</string>
     <string name="oops_msg">УПС, что-то пошло не так</string>
     <string name="please_write">Пожалуйста, напишите своё имя</string>

@@ -1,14 +1,19 @@
 package com.template.relativelayoutsample
 
-import androidx.appcompat.app.AppCompatActivity
+import android.annotation.SuppressLint
+import android.graphics.Color
+import android.graphics.Color.*
+import android.graphics.PorterDuff
 import android.os.Bundle
 import android.view.View
 import android.widget.EditText
 import android.widget.Toast
 import android.widget.Toast.LENGTH_SHORT
+import androidx.appcompat.app.AppCompatActivity
 import com.template.relativelayoutsample.R.*
 import com.template.relativelayoutsample.R.string.*
 
+@Suppress("NAME_SHADOWING", "DEPRECATION")
 class MainActivity : AppCompatActivity() {
 
     // 1st variant - good cause Fragment lifecycle
@@ -18,20 +23,22 @@ class MainActivity : AppCompatActivity() {
         setContentView(layout.activity_main)
     }
 
+    @SuppressLint("UseCompatLoadingForDrawables")
     fun onClick(view: View) {
         val userName = findViewById<EditText>(id.entry)
         lateinit var text: String
+
 
         when (view.id) {
             id.ok -> {
                 text = userName.text.toString().trim()
 
                 if (text.isNotEmpty()) {
-                    Toast.makeText(this, "Hello, $text", LENGTH_SHORT).show()
+                    var toast = Toast.makeText(this, "Hello, $text", LENGTH_SHORT).show()
+//                    toast.view?.background?.setColorFilter()
                 } else {
                     Toast.makeText(this, please_write, LENGTH_SHORT).show()
                 }
-
                 userName.text = null
             }
 
